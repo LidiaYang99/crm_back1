@@ -5,16 +5,16 @@ const usuariosController = require('../../controllers/usuarios.controller')
 
 router.get('/', usuariosController.getAll)
 
-router.get('/:usuarioId', usuariosController.getUser)
 
-//esta ruta puede estar en proyectos 
+router.get('/:usuarioId', usuariosController.getUsuario
+)
 
-router.get('/:usuarioId/fecha/:fecha', usuariosController.getByDate)
+router.put('/', (req, res) => {
+    res.send('tu acabas de actualizar un usuario')
+});
 
-router.post('/', usuariosController.createUsers);
-
-router.delete('/:usuarioId', usuariosController.deleteUsers);
-
-router.put('/:usuarioId', usuariosController.updateUsuario)
+router.delete('/', (req, res) => {
+    res.send('tu acabas de borrar un usuario')
+});
 
 module.exports = router;

@@ -68,7 +68,6 @@ const getByDate = async (req, res) => {
 }
 
 
-
 module.exports = {
     getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate
 }
