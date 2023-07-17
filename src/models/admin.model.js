@@ -3,8 +3,6 @@ const getAdmin = () => {
 }
 
 
-
-
 const getByAdminId = (adminId) => {
     return db.query('select * from administradores where id = ?', [adminId])
 }
@@ -22,9 +20,6 @@ const updateById = (adminId, { nombre, apellidos, email, password }) => {
         'update administradores set nombre = ?, apellidos = ?, email = ?, password = ? where id = ?', [nombre, apellidos, email, password, adminId]
     )
 }
-
-
-
 
 
 const deleteAdmin = (adminId) => {

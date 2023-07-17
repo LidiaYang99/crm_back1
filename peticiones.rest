@@ -4,13 +4,13 @@ GET http://localhost:3000/prueba
 GET http://localhost:3000/api/admins/
 
 ###
-PUT http://localhost:3000/api/admins/2
+PUT http://localhost:3000/api/admins/4
 Content-Type: application/json
 
 {
-    "nombre": "test",
-    "apellidos": "Test123",
-    "email": "test@hotmail.com",
+    "nombre": "Juan",
+    "apellidos": "Lopez",
+    "email": "juanlopez@hotmail.com",
     "password":132465
   }
 
@@ -20,15 +20,15 @@ POST http://localhost:3000/api/admins/
 Content-Type: application/json
 
 {
-    "nombre": "Jose",
-    "apellidos": "Luis",
-    "email": "joseluis@hotmail.com",
+    "nombre": "Maria",
+    "apellidos": "Jose",
+    "email": "mariajose@hotmail.com",
     "password":123456
   }
 
 
 ###
-DELETE http://localhost:3000/api/admins/2
+DELETE http://localhost:3000/api/admins/7
 
 ###
 GET http://localhost:3000/api/usuarios/
@@ -100,8 +100,8 @@ PUT http://localhost:3000/api/proyectos/3
 Content-Type: application/json
 
 {
-    "nombre": "test",
-    "descripcion": "Test123"
+    "nombre": "test888",
+    "descripcion": "Test123888"
   }
 
 
@@ -115,4 +115,4 @@ Content-Type: application/json
   }
 
 ###
-DELETE http://localhost:3000/api/proyectos/5
+DELETE http://localhost:3000/api/proyectos/4

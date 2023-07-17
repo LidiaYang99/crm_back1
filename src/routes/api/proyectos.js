@@ -3,11 +3,8 @@ const { getAllProyectos, postNewProyecto, actualizaProyecto, removeProyecto } = 
 const router = require('express').Router();
 
 router.get('/', getAllProyectos)
-
 router.post('/', postNewProyecto)
-
 router.put('/:proyectoId', actualizaProyecto)
-
 router.delete('/:proyectoId', removeProyecto);
 
 
