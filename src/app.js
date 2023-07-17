@@ -12,4 +12,5 @@ app.get('/prueba', (req, res) => {
 // gestion de rutas
 app.use('/api', require('./routes/api'));
 
+
 module.exports = app;

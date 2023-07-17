@@ -1,9 +1,0 @@
-diff a/peticiones.rest b/peticiones.rest	(rejected hunks)
-@@ -16,7 +16,6 @@
- GET http://localhost:3000/api/usuarios/
- 
- ###
--GET http://localhost:3000/api/usuarios/
- GET http://localhost:3000/api/usuarios/6
- ###
- GET http://localhost:3000/api/usuarios/1/fecha/2023-07-17

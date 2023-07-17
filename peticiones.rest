@@ -32,10 +32,10 @@ Content-Type: application/json
 {
   "nombre": "claudia",
   "apellidos": "lopez",
-  "dni": "71206773n",
-  "email": "claudia@gmail.com",
+  "dni": "71206753n",
+  "email": "claudiaaaa@gmail.com",
   "password":"123456",
-  "telefono": 666668886,
+  "telefono": 666778886,
   "estado":1,
   "fecha_alta": "2023-03-27",
   "departamento_id":"2"
@@ -60,7 +60,7 @@ Content-Type: application/json
   
 }
 ###
-DELETE http://localhost:3000/api/usuarios/5
+DELETE http://localhost:3000/api/usuarios/251
 
 ###
 GET http://localhost:3000/api/departamentos/
@@ -73,3 +73,12 @@ POST http://localhost:3000/api/departamentos/
 
 ###
 DELETE http://localhost:3000/api/departamentos/
+###
+GET  http://localhost:3000/api/usuarios/
+ 
+ ###
+GET http://localhost:3000/api/usuarios/
+###
+GET http://localhost:3000/api/usuarios/6
+ ###
+GET http://localhost:3000/api/usuarios/1/fecha/2023-07-17
