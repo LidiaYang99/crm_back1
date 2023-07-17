@@ -1,12 +1,13 @@
 const jwt = require('jsonwebtoken');
 
 const Usuario = require('../models/usuario.model');
-const Admin = require('../models/admin.model');
+const AdminModel = require('../models/admin.model');
 
 const checkUsuarioId = async (req, res, next) => {
     const { usuarioId } = req.params;
+
     const [usuarios] = await Usuario.getById(usuarioId);
-    if (usuarioId.length === 0) {
+    if (usuarios.length === 0) {
         return res.send({ fatal: 'El usuario no existe' });
     }
     next();
@@ -20,17 +21,15 @@ const checkToken = async (req, res, next) => {
 
     let obj;
     try {
-        obj = jwt.verify(token, 'hola carola')
+        obj = jwt.verify(token, 'Hola carola')
     } catch (error) {
         return res.json({ fatal: error.message });
     }
-    const [admin] = await Admin.getById(obj.userId);
+    const [admin] = await AdminModel.getByAdminId(obj.userId);
     req.user = admin[0];
 
     next();
 }
-
-
 
 
 module.exports = {

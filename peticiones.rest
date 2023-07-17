@@ -1,10 +1,15 @@
-GET http://localhost:3000/prueba
+@host =  http://localhost
+@port = 3000
+@apiAdmins = /api/admins
+@apiUsuarios = /api/usuarios
+@apiProyectos = /api/proyectos
+@apiDepartamentos = /api/departamentos
 
 ###
-GET http://localhost:3000/api/admins/
+GET {{host}}:{{port}}{{apiAdmins}}
 
 ###
-PUT http://localhost:3000/api/admins/4
+PUT {{host}}:{{port}}{{apiAdmins}}/2
 Content-Type: application/json
 
 {
@@ -14,9 +19,8 @@ Content-Type: application/json
     "password":132465
   }
 
-
 ###
-POST http://localhost:3000/api/admins/
+POST {{host}}:{{port}}{{apiAdmins}}/registro
 Content-Type: application/json
 
 {
@@ -24,27 +28,30 @@ Content-Type: application/json
     "apellidos": "Jose",
     "email": "mariajose@hotmail.com",
     "password":123456
-  }
+}
 
 
 ###
-DELETE http://localhost:3000/api/admins/7
+DELETE {{host}}:{{port}}{{apiAdmins}}/2
+
+#########################
+##   API USUARIOS     ##
+#########################
 
 ###
-GET http://localhost:3000/api/usuarios/
+GET {{host}}:{{port}}{{apiUsuarios}}
+Authorization: 'Hola carola'
 
 ###
-GET http://localhost:3000/api/usuarios/
-GET http://localhost:3000/api/usuarios/6
-###
-GET http://localhost:3000/api/usuarios/1/fecha/2023-07-17
-
+GET {{host}}:{{port}}{{apiUsuarios}}/6
+Authorization: 
 
 ###
-PUT http://localhost:3000/api/usuarios/
+GET {{host}}:{{port}}{{apiUsuarios}}/2023-07-17
+Authorization: 
 
 ###
-POST http://localhost:3000/api/usuarios/
+POST {{host}}:{{port}}{{apiUsuarios}}
 Content-Type: application/json
 
 {
@@ -60,9 +67,8 @@ Content-Type: application/json
   
 }
 
-
 ###
-put http://localhost:3000/api/usuarios/251
+PUT {{host}}:{{port}}{{apiUsuarios}}/251
 Content-Type: application/json
 
 {
@@ -78,25 +84,18 @@ Content-Type: application/json
   
 }
 ###
-DELETE http://localhost:3000/api/usuarios/251
+DELETE {{host}}:{{port}}{{apiUsuarios}}/251
+
+#########################
+##    API PROYECTOS    ##
+#########################
 
 ###
-GET http://localhost:3000/api/departamentos/
+GET {{host}}:{{port}}{{apiProyectos}}
+Authorization: 
 
 ###
-PUT http://localhost:3000/api/departamentos/
-
-###
-POST http://localhost:3000/api/departamentos/
-
-###
-DELETE http://localhost:3000/api/departamentos/
-
-###
-GET http://localhost:3000/api/proyectos/
-
-###
-PUT http://localhost:3000/api/proyectos/3
+PUT {{host}}:{{port}}{{apiProyectos}}/3
 Content-Type: application/json
 
 {
@@ -104,9 +103,8 @@ Content-Type: application/json
     "descripcion": "Test123888"
   }
 
-
 ###
-POST http://localhost:3000/api/proyectos/
+POST {{host}}:{{port}}{{apiProyectos}}
 Content-Type: application/json
 
 {
@@ -115,4 +113,18 @@ Content-Type: application/json
   }
 
 ###
-DELETE http://localhost:3000/api/proyectos/4
+DELETE {{host}}:{{port}}{{apiProyectos}}/5
+
+#########################
+##  API DEPARTAMENTOS  ##
+#########################
+###
+GET {{host}}:{{port}}{{apiDepartamentos}}
+
+###
+PUT {{host}}:{{port}}{{apiDepartamentos}}
+###
+POST {{host}}:{{port}}{{apiDepartamentos}}
+
+###
+DELETE {{host}}:{{port}}{{apiDepartamentos}}

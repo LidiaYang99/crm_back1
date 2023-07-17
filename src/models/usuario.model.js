@@ -5,7 +5,7 @@ const getUser = () => {
 }
 
 const getById = (usuarioId) => {
-    return db.query(`select *from usuarios where id=?`, [usuarioId])
+    return db.query('select *from usuarios where id=?', [usuarioId])
 }
 
 const insert = ({ nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento_id }) => {

@@ -1,26 +1,19 @@
 const router = require('express').Router();
 
 const usuariosController = require('../../controllers/usuarios.controller')
+const { checkUsuarioId } = require('../../helpers/middlewares')
 
+router.get('/', usuariosController.getAll);
 
-router.get('/', usuariosController.getAll)
+router.get('/:usuarioId', checkUsuarioId, usuariosController.getUser);
 
-router.get('/:usuarioId', usuariosController.getUser)
-
-//esta ruta puede estar en proyectos 
-
-router.put('/', (req, res) => {
-    res.send('tu acabas de actualizar un usuario')
-});
-router.get('/:usuarioId/fecha/:fecha', usuariosController.getByDate)
-
+router.get('/:usuarioId/fecha/:fecha', checkUsuarioId, usuariosController.getByDate);
 
 router.post('/', usuariosController.createUsers);
 
-router.delete('/:usuarioId', usuariosController.deleteUsers);
+router.put('/:usuarioId', checkUsuarioId, usuariosController.updateUsuario);
 
-router.put('/:usuarioId', usuariosController.updateUsuario)
-
-module.exports = router;
+router.delete('/:usuarioId', checkUsuarioId, usuariosController.deleteUsers);
 
 module.exports = router;
+
