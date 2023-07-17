@@ -2,6 +2,7 @@ const http = require('http');
 const app = require('./src/app');
 
 require('dotenv').config();
+require('./src/config/db');
 
 require('./src/config/db');
 
