@@ -1,14 +1,13 @@
 const router = require('express').Router();
 
-
-router.get('/', (req, res) => {
-    res.send('get nuevo usuario')
-})
+const usuariosController = require('../../controllers/usuarios.controller')
 
 
-router.post('/', (req, res) => {
-    res.send('tu has mandado un usuario nuevo')
-})
+router.get('/', usuariosController.getAll)
+
+
+router.get('/:usuarioId', usuariosController.getUsuario
+)
 
 router.put('/', (req, res) => {
     res.send('tu acabas de actualizar un usuario')
