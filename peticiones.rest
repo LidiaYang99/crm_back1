@@ -16,16 +16,50 @@ DELETE http://localhost:3000/api/admins/
 GET http://localhost:3000/api/usuarios/
 
 ###
-GET http://localhost:3000/api/usuarios/
+GET http://localhost:3000/api/usuarios/6
+###
+GET http://localhost:3000/api/usuarios/1/fecha/2023-07-17
+
 
 ###
 PUT http://localhost:3000/api/usuarios/
 
 ###
 POST http://localhost:3000/api/usuarios/
+Content-Type: application/json
+
+{
+  "nombre": "claudia",
+  "apellidos": "lopez",
+  "dni": "71206773n",
+  "email": "claudia@gmail.com",
+  "password":"123456",
+  "telefono": 666668886,
+  "estado":1,
+  "fecha_alta": "2023-03-27",
+  "departamento_id":"2"
+  
+}
+
 
 ###
-DELETE http://localhost:3000/api/usuarios/
+put http://localhost:3000/api/usuarios/251
+Content-Type: application/json
+
+{
+  "nombre": "claudia",
+  "apellidos": "lopez",
+  "dni": "71206773n",
+  "email": "claudialopez@gmail.com",
+  "password":"123456",
+  "telefono": 666668886,
+  "estado":1,
+  "fecha_alta": "2023-03-27",
+  "departamento_id":"1"
+  
+}
+###
+DELETE http://localhost:3000/api/usuarios/5
 
 ###
 GET http://localhost:3000/api/departamentos/
