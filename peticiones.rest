@@ -20,14 +20,14 @@ Content-Type: application/json
   }
 
 ###
-POST {{host}}:{{port}}{{apiAdmins}}/registro
+POST {{host}}:{{port}}{{apiAdmins}}
 Content-Type: application/json
 
 {
     "nombre": "Maria",
     "apellidos": "Jose",
     "email": "mariajose@hotmail.com",
-    "password":123456
+    "password":"123456"
 }
 
 
@@ -40,7 +40,7 @@ DELETE {{host}}:{{port}}{{apiAdmins}}/2
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}
-Authorization: 'Hola carola'
+Authorization: 
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/6

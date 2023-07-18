@@ -2,8 +2,7 @@ const bcrypt = require('bcryptjs');
 
 const AdminModel = require('../models/admin.model');
 const { createToken } = require('../helpers/utils');
-
-const create = async (req, res) => {
+/* const create = async (req, res) => {
     // usuario, email, password
 
     req.body.password = bcrypt.hashSync(req.body.password, 8);
@@ -16,6 +15,7 @@ const create = async (req, res) => {
         res.json({ fatal: error.message });
     }
 };
+ */
 
 const checkLogin = async (req, res) => {
     // ¿Existe el email en la base de datos?
@@ -47,7 +47,7 @@ const getAllAdmin = async (req, res) => {
     }
 }
 
-/* const postNewAdmin = async (req, res) => {
+const postNewAdmin = async (req, res) => {
     try {
         const [result] = await AdminModel.insertAdmin(req.body);
         const [administradores] = await AdminModel.getByAdminId(result.insertId);
@@ -55,7 +55,7 @@ const getAllAdmin = async (req, res) => {
     } catch (error) {
         res.json({ fatal: error.message })
     }
-} */
+}
 
 
 const actualizaAdmin = async (req, res) => {
@@ -82,5 +82,5 @@ const removeAdmin = async (req, res) => {
 }
 
 module.exports = {
-    getAllAdmin, actualizaAdmin, removeAdmin, create, checkLogin
+    getAllAdmin, actualizaAdmin, removeAdmin, postNewAdmin, checkLogin
 }
