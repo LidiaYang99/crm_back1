@@ -1,5 +1,3 @@
-//metodo qu eme permite visualizar todos los clientes
-
 const getUser = () => {
     return db.query('select *from usuarios')
 }
@@ -23,9 +21,9 @@ const update = (usuarioId, { nombre, apellidos, dni, email, password, telefono, 
 
 }
 
-const remove = (clienteId) => {
+const remove = (usuarioId) => {
     return db.query(
-        'delete from usuarios where id = ?', [clienteId]
+        'delete from usuarios where id = ?', [usuarioId]
     )
 }
 
