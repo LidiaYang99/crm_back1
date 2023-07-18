@@ -129,16 +129,3 @@ Content-Type: application/json
 ###
 DELETE {{host}}:{{port}}{{apiProyectos}}/5
 
-#########################
-##  API DEPARTAMENTOS  ##
-#########################
-###
-GET {{host}}:{{port}}{{apiDepartamentos}}
-
-###
-PUT {{host}}:{{port}}{{apiDepartamentos}}
-###
-POST {{host}}:{{port}}{{apiDepartamentos}}
-
-###
-DELETE {{host}}:{{port}}{{apiDepartamentos}}
