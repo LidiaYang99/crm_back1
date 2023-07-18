@@ -38,7 +38,7 @@ CREATE TABLE `proyectos` (
 
 LOCK TABLES `proyectos` WRITE;
 /*!40000 ALTER TABLE `proyectos` DISABLE KEYS */;
-INSERT INTO `proyectos` VALUES (1,'E-commerce','Area especializada en la venta de productos y servicios a través de la web'),(2,'Asistencia Virtual','Mejoramiento y apoyo a grandes empresas');
+INSERT INTO `proyectos` VALUES (1,'E-commerce','Area especializada en la venta de productos y servicios a través de la web.'),(2,'Asistencia Virtual','Mejoramiento y apoyo a grandes empresas');
 /*!40000 ALTER TABLE `proyectos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-17 14:14:47
+-- Dump completed on 2023-07-18 13:57:59

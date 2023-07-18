@@ -31,7 +31,7 @@ CREATE TABLE `administradores` (
   `email` varchar(80) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `administradores` (
 
 LOCK TABLES `administradores` WRITE;
 /*!40000 ALTER TABLE `administradores` DISABLE KEYS */;
-INSERT INTO `administradores` VALUES (1,'Carlos','Sanchez','carlos@hotmail.com','12345'),(2,'Maria','Perez','maria@hotmail.com','4567');
+INSERT INTO `administradores` VALUES (1,'Carlos','Sanchez','carlos@hotmail.com','12345'),(2,'Juan','Lopez','juanlopez@hotmail.com','132465'),(4,'Jose','Luis','joseluis@hotmail.com','123456'),(5,'Jose','Luis','joseluis@hotmail.com','123456'),(6,'Jose','Luis','joseluis@hotmail.com','123456'),(7,'Jose','Luis','joseluis@hotmail.com','123456'),(8,'Maria','Jose','mariajose@hotmail.com','123456'),(9,'Maria','Jose','mariajose@hotmail.com','$2a$08$ERUMb.EodldxIsjWIUTHIeFulb6DwP07shQcBJug1kld5VOfd2bvO'),(10,'Maria','Jose','mariajose@hotmail.com','$2a$08$Ab7EZdj.mnz.ghCJnEDSvOKBt6dQ3SnPNdceB3G5WyK9P5alom4DK'),(11,'Mario','Jose','mary@hotmail.com','$2a$08$sSyDD4d7HEUGOyn7XK61ae.g1DiLyvEbh1ICnAiq58U81RWypmKOO');
 /*!40000 ALTER TABLE `administradores` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-17 14:14:46
+-- Dump completed on 2023-07-18 13:57:59
