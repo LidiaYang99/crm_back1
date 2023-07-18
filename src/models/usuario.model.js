@@ -8,17 +8,17 @@ const getById = (usuarioId) => {
     return db.query('select *from usuarios where id=?', [usuarioId])
 }
 
-const insert = ({ nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento_id }) => {
+const insert = ({ nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento }) => {
     return db.query(
-        'insert into usuarios (nombre, apellidos, dni, email, password, telefono, fecha_alta, estado,departamento_id) values (?, ?, ?, ?, ?, ?, ?, ?,?)',
-        [nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento_id]
+        'insert into usuarios (nombre, apellidos, dni, email, password, telefono, fecha_alta, estado,departamento) values (?, ?, ?, ?, ?, ?, ?, ?,?)',
+        [nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento]
     );
 }
 
-const update = (usuarioId, { nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento_id }) => {
+const update = (usuarioId, { nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento }) => {
     return db.query(
-        'update usuarios set nombre=?, apellidos=?, dni=?, email=?, password=?, telefono=?, fecha_alta=?, estado=?,departamento_id=? where id=?',
-        [nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento_id, usuarioId]
+        'update usuarios set nombre=?, apellidos=?, dni=?, email=?, password=?, telefono=?, fecha_alta=?, estado=?,departamento=? where id=?',
+        [nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento, usuarioId]
     );
 
 }
