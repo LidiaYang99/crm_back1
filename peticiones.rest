@@ -32,9 +32,9 @@ Content-Type: application/json
 ###
 POST {{host}}:{{port}}{{apiAdmins}}/login
 Content-Type: application/json
+
 {
-    "nombre": "Maria",
-    "apellidos": "Jose",
+   
     "email": "mariajose@hotmail.com",
     "password":"123456"
 }
@@ -55,8 +55,8 @@ GET {{host}}:{{port}}{{apiUsuarios}}/6
 Authorization: 
 
 ###
-GET {{host}}:{{port}}{{apiUsuarios}}/2023-07-17
-Authorization: 'Hola carola'
+GET {{host}}:{{port}}{{apiUsuarios}}/8/fecha/2023-07-17
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
 
 ###
 POST {{host}}:{{port}}{{apiUsuarios}}
@@ -100,7 +100,7 @@ DELETE {{host}}:{{port}}{{apiUsuarios}}/251
 
 ###
 GET {{host}}:{{port}}{{apiProyectos}}
-Authorization: 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
 
 ###
 PUT {{host}}:{{port}}{{apiProyectos}}/3

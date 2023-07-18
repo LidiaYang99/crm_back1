@@ -6,7 +6,7 @@ router.get('/', getAllAdmin);
 router.post('/registro', create);
 router.post('/login', checkLogin);
 router.put('/:adminId', actualizaAdmin);
-router.delete('/:adinIdm', removeAdmin);
+router.delete('/:adminId', removeAdmin);
 
 
 module.exports = router;
