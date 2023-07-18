@@ -20,7 +20,7 @@ Content-Type: application/json
   }
 
 ###
-POST {{host}}:{{port}}{{apiAdmins}}
+POST {{host}}:{{port}}{{apiAdmins}}/registro
 Content-Type: application/json
 
 {
@@ -29,7 +29,15 @@ Content-Type: application/json
     "email": "mariajose@hotmail.com",
     "password":"123456"
 }
-
+###
+POST {{host}}:{{port}}{{apiAdmins}}/login
+Content-Type: application/json
+{
+    "nombre": "Maria",
+    "apellidos": "Jose",
+    "email": "mariajose@hotmail.com",
+    "password":"123456"
+}
 
 ###
 DELETE {{host}}:{{port}}{{apiAdmins}}/2
@@ -48,7 +56,7 @@ Authorization:
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/2023-07-17
-Authorization: 
+Authorization: 'Hola carola'
 
 ###
 POST {{host}}:{{port}}{{apiUsuarios}}

@@ -1,4 +1,3 @@
-const { json } = require("body-parser")
 const Usuario = require("../models/usuario.model")
 
 const getAll = async (req, res) => {
