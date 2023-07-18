@@ -29,7 +29,7 @@ CREATE TABLE `Usuarios_has_proyectos` (
   `Usuarios_id` int DEFAULT NULL,
   `proyectos_id` int NOT NULL,
   `horas_dedicadas` float NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fecha` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Usuarios_has_proyectos_proyectos1_idx` (`proyectos_id`),
   KEY `fk_Usuarios_has_proyectos_Usuarios1_idx` (`Usuarios_id`),
@@ -44,7 +44,7 @@ CREATE TABLE `Usuarios_has_proyectos` (
 
 LOCK TABLES `Usuarios_has_proyectos` WRITE;
 /*!40000 ALTER TABLE `Usuarios_has_proyectos` DISABLE KEYS */;
-INSERT INTO `Usuarios_has_proyectos` VALUES (1,1,2,10,'2023-07-17 12:08:13'),(2,2,1,5,'2023-07-17 12:08:13'),(3,3,1,8,'2023-07-17 12:08:13'),(4,4,2,7,'2023-07-17 12:08:13'),(5,5,1,12,'2023-07-17 12:08:13'),(6,6,2,14,'2023-07-17 12:08:13'),(7,7,1,9,'2023-07-17 12:08:13'),(8,8,2,10,'2023-07-17 12:08:13'),(9,9,1,5,'2023-07-17 12:08:13'),(10,10,1,8,'2023-07-17 12:08:13'),(11,11,2,7,'2023-07-17 12:08:13'),(12,12,1,12,'2023-07-17 12:08:13'),(13,13,2,14,'2023-07-17 12:08:13'),(14,14,1,9,'2023-07-17 12:08:13'),(15,15,2,10,'2023-07-17 12:08:13'),(16,16,1,5,'2023-07-17 12:08:13'),(17,17,1,8,'2023-07-17 12:08:13'),(18,18,2,7,'2023-07-17 12:08:13'),(19,19,1,12,'2023-07-17 12:08:13'),(20,20,2,14,'2023-07-17 12:08:13');
+INSERT INTO `Usuarios_has_proyectos` VALUES (1,1,2,10,'2023-07-17'),(2,2,1,5,'2023-07-17'),(3,3,1,8,'2023-07-17'),(4,4,2,7,'2023-07-17'),(5,5,1,12,'2023-07-17'),(6,6,2,14,'2023-07-17'),(7,7,1,9,'2023-07-17'),(8,8,2,10,'2023-07-17'),(9,9,1,5,'2023-07-17'),(10,10,1,8,'2023-07-17'),(11,11,2,7,'2023-07-17'),(12,12,1,12,'2023-07-17'),(13,13,2,14,'2023-07-17'),(14,14,1,9,'2023-07-17'),(15,15,2,10,'2023-07-17'),(16,16,1,5,'2023-07-17'),(17,17,1,8,'2023-07-17'),(18,18,2,7,'2023-07-17'),(19,19,1,12,'2023-07-17'),(20,20,2,14,'2023-07-17');
 /*!40000 ALTER TABLE `Usuarios_has_proyectos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-17 14:14:46
+-- Dump completed on 2023-07-18 13:57:59
