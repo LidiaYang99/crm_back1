@@ -23,9 +23,9 @@ const update = (usuarioId, { nombre, apellidos, dni, email, password, telefono, 
 
 }
 
-const remove = (clienteId) => {
+const remove = (usuarioId) => {
     return db.query(
-        'delete from usuarios where id = ?', [clienteId]
+        'delete from usuarios where id = ?', [usuarioId]
     )
 }
 

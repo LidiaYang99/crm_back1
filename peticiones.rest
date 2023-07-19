@@ -35,15 +35,15 @@ POST {{host}}:{{port}}{{apiAdmins}}/login
 Content-Type: application/json
 
 {
-    "nombre": "Maria",
+    "nombre": "test132",
     "apellidos": "Jose",
-    "email": "mariajose@hotmail.com",
-    "password":"123456"
+    "email": "test132@hotmail.com",
+    "password":"123456798"
 }
 
 ###
 GET http://localhost:3000/api/usuarios/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJleHAiOjE2OTA5OTA4MzIsImlhdCI6MTY4OTY5NDgzMn0.7X99TaawcC-I3orVT1B9VUE2B9e4C4QR1KdjQ47GKU4
 
 ###
 DELETE {{host}}:{{port}}{{apiAdmins}}/2
@@ -61,8 +61,8 @@ GET {{host}}:{{port}}{{apiUsuarios}}/6
 Authorization: 
 
 ###
-GET {{host}}:{{port}}{{apiUsuarios}}/2023-07-17
-Authorization: 'Hola carola'
+GET {{host}}:{{port}}{{apiUsuarios}}/1/fecha/2023-07-17
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJleHAiOjE2OTA5OTA4MzIsImlhdCI6MTY4OTY5NDgzMn0.7X99TaawcC-I3orVT1B9VUE2B9e4C4QR1KdjQ47GKU4
 
 ###
 POST {{host}}:{{port}}{{apiUsuarios}}
