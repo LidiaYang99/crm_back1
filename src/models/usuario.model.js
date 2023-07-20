@@ -28,8 +28,9 @@ const remove = (usuarioId) => {
 }
 
 const getHour = (usuarioId, fecha) => {
-    return db.query('select up.fecha as "fecha", u.nombre, u.apellidos, p.nombre as "proyecto", sum(up.horas_dedicadas) from usuarios as u, proyectos as p, usuarios_has_proyectos as up where u.id= up.Usuarios_id and p.id=up.proyectos_id and up.Usuarios_id=? and up.fecha= ? group by p.nombre, u.nombre , u.apellidos, up.fecha', [usuarioId, fecha])
+    return db.query('select up.fecha as "fecha", u.nombre, u.apellidos, p.nombre as "proyecto", sum(up.horas_dedicadas) as horas from usuarios as u, proyectos as p, usuarios_has_proyectos as up where u.id= up.Usuarios_id and p.id=up.proyectos_id and up.Usuarios_id=? and up.fecha= ? group by p.nombre, u.nombre , u.apellidos, up.fecha', [usuarioId, fecha])
 }
+
 
 module.exports = {
     getUser, getById, insert, update, remove, getHour
