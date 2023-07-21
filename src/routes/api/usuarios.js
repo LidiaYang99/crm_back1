@@ -1,19 +1,20 @@
 const router = require('express').Router();
 
 const usuariosController = require('../../controllers/usuarios.controller')
-const { checkUsuarioId } = require('../../helpers/middlewares')
+const { checkTokenUser } = require('../../helpers/middlewares');
+
 
 router.get('/', usuariosController.getAll);
-
-router.get('/:usuarioId', checkUsuarioId, usuariosController.getUser);
-
-router.get('/:usuarioId/fecha/:fecha', checkUsuarioId, usuariosController.getByDate);
+router.get('/perfil', checkTokenUser, usuariosController.getUser);
+router.get('fecha/:fecha', checkTokenUser, usuariosController.getByDate);
 
 router.post('/', usuariosController.createUsers);
+router.post('/login/user', usuariosController.checkLoginUser);
+router.post('/horas', checkTokenUser, usuariosController.registroHours);
 
-router.put('/:usuarioId', checkUsuarioId, usuariosController.updateUsuario);
+router.put('/', usuariosController.updateUsuario);
 
-router.delete('/:usuarioId', checkUsuarioId, usuariosController.deleteUsers);
+router.delete('/', checkTokenUser, usuariosController.deleteUsers);
 
 module.exports = router;
 

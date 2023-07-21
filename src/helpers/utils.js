@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const createToken = (user) => {
     const obj = {
         userId: user.id,
+        user_rol: user.rol,
         exp: dayjs().add(15, 'days').unix()
     }
 
