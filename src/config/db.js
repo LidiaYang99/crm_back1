@@ -9,4 +9,5 @@ const pool = mysql.createPool({
 });
 
 
+
 global.db = pool.promise();

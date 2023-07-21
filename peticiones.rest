@@ -129,3 +129,10 @@ Content-Type: application/json
 ###
 DELETE {{host}}:{{port}}{{apiProyectos}}/5
 
+###
+get {{host}}:{{port}}{{apiProyectos}}/5/1/07
+###
+get {{host}}:{{port}}{{apiProyectos}}
+
+
+
