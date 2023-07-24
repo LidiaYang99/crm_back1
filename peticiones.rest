@@ -52,9 +52,13 @@ DELETE {{host}}:{{port}}{{apiAdmins}}/2
 ##   API USUARIOS     ##
 #########################
 
+
+
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}
 Authorization: 
+GET {{host}}:{{port}}{{apiUsuarios}}/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3NSwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIyNzgyMzMsImlhdCI6MTY5MDExODIzM30.3jvLKFO6kF_GiO1FBcJBK5gbwAfmP-Z5nA3BVwv7zXY
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/6
@@ -97,6 +101,31 @@ Content-Type: application/json
   "departamento_id":"1"
   
 }
+  
+
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/horasdedicadas
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI1MywidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIzNjkyNDMsImlhdCI6MTY5MDIwOTI0M30.E_R8ToIGr-FQ1BoWjdm4RrDnMFIvfPYy-BIu15RUMGM
+
+
+###
+PUT {{host}}:{{port}}{{apiUsuarios}}/editar/275
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJ1c2VyUm9sIjoiYWRtaW5zIiwiZXhwIjoxNjkyMjc1NTkyLCJpYXQiOjE2OTAxMTU1OTJ9.Swa_yJqdlFgZXTKj4H2YGQDgdZj-_O_kHscJY_JwGKA 
+Content-Type: application/json
+
+{
+  "id": 275,
+  "nombre": "caca",
+  "apellidos": "perro",
+  "dni": "95024261Z",
+  "email": "caca@hotmail.com",
+  "password": "$2a$08$nui6LdFHX89UVHqL6OsgGOUVWAj6zI1HD.tG5pb04JTAyHq7YIL/a",
+  "telefono": 665544556,
+  "fecha_alta": "2023-07-19",
+  "estado": 1,
+  "departamento": "frontend"
+}
+
 ###
 DELETE {{host}}:{{port}}{{apiUsuarios}}/251
 

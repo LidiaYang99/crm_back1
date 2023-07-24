@@ -28,8 +28,10 @@ const getMonth = (usuarioId, proyectoId, mes) => {
     return db.query(
         'select up.horas_dedicadas, up.fecha, p.nombre from mydb.usuarios_has_proyectos as up, proyectos as p  where p.id=up.proyectos_id and Usuarios_id=? and proyectos_id=? and month(fecha)=? ', [usuarioId, proyectoId, mes]
     )
-
 }
+
+
+
 
 module.exports = {
     getProyectos, getByProyectoioId, insertProyecto, updateProyecto, deleteProyecto, getMonth

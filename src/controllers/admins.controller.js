@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 
 const AdminModel = require('../models/admin.model');
-const { createToken } = require('../helpers/utils');
+const { createAdminToken } = require('../helpers/utils');
 
 const create = async (req, res) => {
     // usuario, email, password
@@ -35,7 +35,7 @@ const checkLogin = async (req, res) => {
 
     res.json({
         success: 'Login correcto 🥳',
-        token: createToken(user)
+        token: createAdminToken(admin)
     });
 }
 
