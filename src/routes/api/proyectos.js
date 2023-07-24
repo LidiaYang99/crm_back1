@@ -1,6 +1,6 @@
 const { getAllProyectos, postNewProyecto, actualizaProyecto, removeProyecto, getForMonth } = require('../../controllers/proyectos.controller');
-const router = require('express').Router();
 
+const router = require('express').Router();
 
 router.get('/', getAllProyectos)
 router.get('/:usuarioId/:proyectoId/:mes', getForMonth)

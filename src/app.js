@@ -4,7 +4,6 @@ const cors = require('cors');
 
 const app = express();
 
-
 // config de la app Express
 app.use(cors());
 app.use(express.json());

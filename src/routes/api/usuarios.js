@@ -1,23 +1,19 @@
 const router = require('express').Router();
 
 const usuariosController = require('../../controllers/usuarios.controller')
-const { checkTokenAdmin, checkTokenUser } = require('../../helpers/middlewares');
-
+const { checkUsuarioId } = require('../../helpers/middlewares')
 
 router.get('/', usuariosController.getAll);
 
-router.get('/profile', checkTokenUser, usuariosController.getProfile)
-router.get('/:usuarioId', /* checkUsuarioId, */ usuariosController.getUser);
-router.get('/:usuarioId/:fecha', checkTokenAdmin, usuariosController.getByDate);
+router.get('/:usuarioId', checkUsuarioId, usuariosController.getUser);
 
+router.get('/:usuarioId/fecha/:fecha', checkUsuarioId, usuariosController.getByDate);
 
-router.post('/', checkTokenAdmin, usuariosController.createUsers);
-router.post('/login/user', usuariosController.checkLoginUser);
-router.post('/horas', checkTokenAdmin, usuariosController.registroHours);
+router.post('/', usuariosController.createUsers);
 
-router.put('/editar/:usuarioId', checkTokenAdmin, usuariosController.updateUsuario);
+router.put('/:usuarioId', checkUsuarioId, usuariosController.updateUsuario);
 
-router.delete('/:usuarioId', checkTokenAdmin, usuariosController.deleteUsers);
+router.delete('/:usuarioId', checkUsuarioId, usuariosController.deleteUsers);
 
 module.exports = router;
 

@@ -24,9 +24,9 @@ POST {{host}}:{{port}}{{apiAdmins}}/registro
 Content-Type: application/json
 
 {
-    "nombre": "carlos",
+    "nombre": "test132",
     "apellidos": "Jose",
-    "email": "carlos@hotmail.com",
+    "email": "test132@hotmail.com",
     "password":"123456798"
 }
 
@@ -35,11 +35,15 @@ POST {{host}}:{{port}}{{apiAdmins}}/login
 Content-Type: application/json
 
 {
-   
-    "email": "vir@hotmail.com",
-    "password":"virBar22"
+    "nombre": "Maria",
+    "apellidos": "Jose",
+    "email": "mariajose@hotmail.com",
+    "password":"123456"
 }
 
+###
+GET http://localhost:3000/api/usuarios/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
 
 ###
 DELETE {{host}}:{{port}}{{apiAdmins}}/2
@@ -49,78 +53,50 @@ DELETE {{host}}:{{port}}{{apiAdmins}}/2
 #########################
 
 ###
-GET {{host}}:{{port}}{{apiUsuarios}}/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJ1c2VyX3JvbCI6ImFkbWlucyIsImV4cCI6MTY5MTQwNTY1MCwiaWF0IjoxNjkwMTA5NjUwfQ.TbNNnJ790maKnuHLAjGkUh-nVkJcPQhGy1GVD6Ssal
+GET {{host}}:{{port}}{{apiUsuarios}}
+Authorization: 
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/6
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3NSwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIyNzgyMzMsImlhdCI6MTY5MDExODIzM30.3jvLKFO6kF_GiO1FBcJBK5gbwAfmP-Z5nA3BVwv7zXY
-
+Authorization: 
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/2023-07-17
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3NSwiZXhwIjoxNjkxMjM2NjcxLCJpYXQiOjE2ODk5NDA2NzF9.P_tE2Xg4Z0z4oP-1prJre6FJt1R9D89bN-XPrvR0pXc
-
-
-###
-POST {{host}}:{{port}}{{{{apiUsuarios}}}}/275
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJ1c2VyX3JvbCI6ImFkbWlucyIsImV4cCI6MTY5MTM5Nzk3MywiaWF0IjoxNjkwMTAxOTczfQ.Vi8uOGqaQS5ED6wj7YClDRgYJDnDI1BprUKSyhStWKQ
-Content-Type: application/json
-
-{
-  "usuario_id": 21,
-  "proyecto_id": 2,
-  "horas_dedicadas":10,
-  "fecha": "2023-07-20"
-}
+Authorization: 'Hola carola'
 
 ###
 POST {{host}}:{{port}}{{apiUsuarios}}
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJleHAiOjE2OTEzNDE4NzcsImlhdCI6MTY5MDA0NTg3N30.SxDHQoslL4UlXlUVleH-lFZYkEIaAWN3h-vvL_3180Q
 Content-Type: application/json
 
 {
-  "nombre": "Ana",
-  "apellidos": "sanchez",
-  "dni": "71206136n",
-  "email": "anaa@gmail.com",
+  "nombre": "claudia",
+  "apellidos": "lopez",
+  "dni": "71206753n",
+  "email": "claudiaaaa@gmail.com",
   "password":"123456",
-  "telefono": 666778831,
+  "telefono": 666778886,
   "estado":1,
   "fecha_alta": "2023-03-27",
-  "departamento":"frontend"
+  "departamento_id":"2"
   
 }
+
 ###
-POST {{host}}:{{port}}{{apiUsuarios}}/login/user
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJ1c2VyX3JvbCI6ImFkbWlucyIsImV4cCI6MTY5MTM5Nzk3MywiaWF0IjoxNjkwMTAxOTczfQ.Vi8uOGqaQS5ED6wj7YClDRgYJDnDI1BprUKSyhStWKQ
+PUT {{host}}:{{port}}{{apiUsuarios}}/251
 Content-Type: application/json
 
 {
-   
-    "email": "caca@hotmail.com",
-    "password":"loboLA22@"
+  "nombre": "claudia",
+  "apellidos": "lopez",
+  "dni": "71206773n",
+  "email": "claudialopez@gmail.com",
+  "password":"123456",
+  "telefono": 666668886,
+  "estado":1,
+  "fecha_alta": "2023-03-27",
+  "departamento_id":"1"
+  
 }
-
-
-###
-PUT {{host}}:{{port}}{{apiUsuarios}}/editar/275
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJ1c2VyUm9sIjoiYWRtaW5zIiwiZXhwIjoxNjkyMjc1NTkyLCJpYXQiOjE2OTAxMTU1OTJ9.Swa_yJqdlFgZXTKj4H2YGQDgdZj-_O_kHscJY_JwGKA 
-Content-Type: application/json
-
-{
-  "id": 275,
-  "nombre": "caca",
-  "apellidos": "perro",
-  "dni": "95024261Z",
-  "email": "caca@hotmail.com",
-  "password": "$2a$08$nui6LdFHX89UVHqL6OsgGOUVWAj6zI1HD.tG5pb04JTAyHq7YIL/a",
-  "telefono": 665544556,
-  "fecha_alta": "2023-07-19",
-  "estado": 1,
-  "departamento": "frontend"
-}
-
 ###
 DELETE {{host}}:{{port}}{{apiUsuarios}}/251
 
@@ -140,7 +116,6 @@ Content-Type: application/json
     "nombre": "test888",
     "descripcion": "Test123888"
   }
-
 
 ###
 POST {{host}}:{{port}}{{apiProyectos}}
