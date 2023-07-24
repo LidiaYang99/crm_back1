@@ -36,7 +36,7 @@ const createUsers = async (req, res) => {
 const updateUsuario = async (req, res) => {
     try {
         const { usuarioId } = req.params
-        await Usuario.update(usuarioId, req.body);
+        await Usuario.updateUser(usuarioId, req.body);
         const [usuarios] = await Usuario.getById(usuarioId)
         res.json(usuarios[0])
     } catch (error) {
