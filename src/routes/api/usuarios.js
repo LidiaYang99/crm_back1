@@ -1,20 +1,23 @@
 const router = require('express').Router();
 
 const usuariosController = require('../../controllers/usuarios.controller')
-const { checkTokenUser } = require('../../helpers/middlewares');
+const { checkTokenAdmin, checkTokenUser } = require('../../helpers/middlewares');
 
 
 router.get('/', usuariosController.getAll);
-router.get('/perfil', checkTokenUser, usuariosController.getUser);
-router.get('fecha/:fecha', checkTokenUser, usuariosController.getByDate);
 
-router.post('/', usuariosController.createUsers);
+router.get('/profile', checkTokenUser, usuariosController.getProfile)
+router.get('/:usuarioId', /* checkUsuarioId, */ usuariosController.getUser);
+router.get('/:usuarioId/:fecha', checkTokenAdmin, usuariosController.getByDate);
+
+
+router.post('/', checkTokenAdmin, usuariosController.createUsers);
 router.post('/login/user', usuariosController.checkLoginUser);
-router.post('/horas', checkTokenUser, usuariosController.registroHours);
+router.post('/horas', checkTokenAdmin, usuariosController.registroHours);
 
-router.put('/', usuariosController.updateUsuario);
+router.put('/editar/:usuarioId', checkTokenAdmin, usuariosController.updateUsuario);
 
-router.delete('/', checkTokenUser, usuariosController.deleteUsers);
+router.delete('/:usuarioId', checkTokenAdmin, usuariosController.deleteUsers);
 
 module.exports = router;
 

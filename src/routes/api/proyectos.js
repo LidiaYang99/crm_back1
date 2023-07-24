@@ -1,6 +1,9 @@
+const router = require('express').Router();
+
+
 const { getAllProyectos, postNewProyecto, actualizaProyecto, removeProyecto } = require('../../controllers/proyectos.controller');
 
-const router = require('express').Router();
+
 
 router.get('/', getAllProyectos)
 router.post('/', postNewProyecto)

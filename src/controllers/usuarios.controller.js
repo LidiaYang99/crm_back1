@@ -1,13 +1,13 @@
 const Usuario = require("../models/usuario.model");
 const bcrypt = require('bcryptjs');
 
-const { createToken } = require('../helpers/utils');
+const { createUserToken } = require('../helpers/utils');
 
 
 const getAll = async (req, res) => {
     try {
         const [usuarios] =
-            await Usuario.getUser()
+            await Usuario.getUsers()
         res.json(usuarios)
     } catch (error) {
         res.json({ fatal: error.message })
@@ -15,8 +15,10 @@ const getAll = async (req, res) => {
 }
 
 const getUser = async (req, res) => {
+
     try {
-        const [usuarios] = await Usuario.getById(req.user.id);
+        const [usuarios] = await Usuario.getById(req.params.usuarioId);
+
         if (usuarios.length === 0) {
             return res.json({ fatal: 'no existe un usuario con ese id ' })
         }
@@ -26,6 +28,17 @@ const getUser = async (req, res) => {
         res.json({ fatal: error.message })
     }
 }
+
+const getProfile = async (req, res) => {
+    res.json(req.user)
+}
+
+
+
+
+
+
+
 
 const createUsers = async (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, 8);
@@ -37,17 +50,27 @@ const createUsers = async (req, res) => {
         res.json({ fatal: error.message })
     }
 }
-
 const updateUsuario = async (req, res) => {
     try {
+        const { usuarioId } = req.params;
+        const [result] = await Usuario.updateUser(usuarioId, req.body);
+        const [usuarios] = await Usuario.getById(usuarioId);
+        res.json(usuarios[0]);
+    } catch (error) {
+        res.json({ fatal: error.message });
+    }
+};
+
+/* const updateUsuario = async (req, res) => {
+    try {
         const { usuarioId } = req.params
-        await Usuario.update(usuarioId, req.body);
-        const [usuarios] = await Usuario.getById(usuarioId)
+        const [result] = await Usuario.updateUser(usuarioId, req.body);
+        const [usuarios] = await Usuario.getById(result.insertId)
         res.json(usuarios[0])
     } catch (error) {
         res.json({ fatal: error.message })
     }
-}
+} */
 
 const deleteUsers = async (req, res) => {
     try {
@@ -101,10 +124,10 @@ const checkLoginUser = async (req, res) => {
     }
     res.json({
         success: 'Login correcto',
-        token: createToken(user)
+        token: createUserToken(user)
     });
 }
 
 module.exports = {
-    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser
+    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile
 }

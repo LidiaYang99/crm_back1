@@ -1,9 +1,9 @@
-const getUser = () => {
-    return db.query('select *from usuarios')
+const getUsers = () => {
+    return db.query('select * from usuarios')
 }
 
 const getById = (usuarioId) => {
-    return db.query('select *from usuarios where id=?', [usuarioId])
+    return db.query('select * from usuarios where id=?', [usuarioId])
 }
 
 const insert = ({ nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento }) => {
@@ -13,7 +13,7 @@ const insert = ({ nombre, apellidos, dni, email, password, telefono, fecha_alta,
     );
 }
 
-const update = (usuarioId, { nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento }) => {
+const updateUser = (usuarioId, { nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento }) => {
     return db.query(
         'update usuarios set nombre=?, apellidos=?, dni=?, email=?, password=?, telefono=?, fecha_alta=?, estado=?,departamento=? where id=?',
         [nombre, apellidos, dni, email, password, telefono, fecha_alta, estado, departamento, usuarioId]
@@ -41,6 +41,6 @@ const registerHour = ({ usuario_id, proyecto_id, horas_dedicadas, fecha }) => {
 
 
 module.exports = {
-    getUser, getById, insert, update, remove, getHour, registerHour, getByEmailUser
+    getUsers, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser
 }
 
