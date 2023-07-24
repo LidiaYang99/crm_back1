@@ -1,7 +1,8 @@
 const bcrypt = require('bcryptjs');
 
 const AdminModel = require('../models/admin.model');
-const { createToken } = require('../helpers/utils');
+const { createAdminToken } = require('../helpers/utils');
+
 
 const create = async (req, res) => {
     // usuario, email, password
@@ -10,8 +11,8 @@ const create = async (req, res) => {
 
     try {
         const [result] = await AdminModel.insertAdmin(req.body);
-        const [admin] = await AdminModel.getByAdminId(result.insertId);
-        res.json(admin[0]);
+        const [admins] = await AdminModel.getByAdminId(result.insertId);
+        res.json(admins[0]);
     } catch (error) {
         res.json({ fatal: error.message });
     }
@@ -19,23 +20,22 @@ const create = async (req, res) => {
 
 
 const checkLogin = async (req, res) => {
-    // ¿Existe el email en la base de datos?
+
     const [admin] = await AdminModel.getByEmail(req.body.email);
     if (admin.length === 0) {
         return res.json({ fatal: 'error en email y/o contraseña' });
     }
 
-    const user = admin[0];
+    const admins = admin[0];
 
-    // Comprobar si las password coinciden 
-    const iguales = bcrypt.compareSync(req.body.password, user.password);
+    const iguales = bcrypt.compareSync(req.body.password, admins.password);
     if (!iguales) {
         return res.json({ fatal: 'error en email y/o contraseña' });
     }
 
     res.json({
         success: 'Login correcto 🥳',
-        token: createToken(user)
+        token: createAdminToken(admin)
     });
 }
 
