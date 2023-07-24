@@ -43,8 +43,16 @@ const registerHour = ({ usuario_id, proyecto_id, horas_dedicadas, fecha }) => {
     return db.query('INSERT INTO mydb.Usuarios_has_proyectos (Usuarios_id, proyectos_id, horas_dedicadas, fecha) VALUES (?, ?, ?, ?)', [usuario_id, proyecto_id, horas_dedicadas, fecha]);
 };
 
+const insertHour = (usuarios_id, proyectos_id, hora_entrada, hora_salida, fecha) => {
+    console.log('id', usuarios_id, 'proyecto_id', proyectos_id, 'entrada', hora_entrada, 'salida', hora_salida, 'fecha', fecha)
+
+    return db.query(`INSERT INTO usuarios_has_proyectos (usuarios_id, proyectos_id, horas_dedicadas,hora_entrada,hora_salida,fecha) VALUES (${usuarios_id}, ${proyectos_id}, ROUND((TIME_TO_SEC('${hora_salida}') - TIME_TO_SEC('${hora_entrada}'))/3600, 2),'${hora_entrada}','${hora_salida}','${fecha}')`)
+
+}
+
+
 
 module.exports = {
-    getUsers, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser
+    getUsers, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser, insertHour
 }
 

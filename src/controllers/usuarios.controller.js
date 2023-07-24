@@ -128,6 +128,11 @@ const checkLoginUser = async (req, res) => {
     });
 }
 
+const horasDedicadas = async (req, res) => {
+    const [registro] = await Usuario.insertHour(usuarios_id, proyectos_id, hora_entrada, hora_salida, fecha)
+    res.json(registro)
+}
+
 module.exports = {
-    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile
+    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas
 }

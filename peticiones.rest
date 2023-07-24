@@ -48,6 +48,8 @@ DELETE {{host}}:{{port}}{{apiAdmins}}/2
 ##   API USUARIOS     ##
 #########################
 
+
+
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/profile
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3NSwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIyNzgyMzMsImlhdCI6MTY5MDExODIzM30.3jvLKFO6kF_GiO1FBcJBK5gbwAfmP-Z5nA3BVwv7zXY
@@ -97,10 +99,15 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJ1c2VyX3Jv
 Content-Type: application/json
 
 {
-   
-    "email": "caca@hotmail.com",
-    "password":"loboLA22@"
+  
+  "email": "anaa@gmail.com",
+  "password":"123456"
+ 
 }
+
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/horasdedicadas
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI1MywidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIzNjkyNDMsImlhdCI6MTY5MDIwOTI0M30.E_R8ToIGr-FQ1BoWjdm4RrDnMFIvfPYy-BIu15RUMGM
 
 
 ###
