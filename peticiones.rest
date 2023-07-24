@@ -50,7 +50,7 @@ DELETE {{host}}:{{port}}{{apiAdmins}}/2
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJ1c2VyX3JvbCI6ImFkbWlucyIsImV4cCI6MTY5MTQwNTY1MCwiaWF0IjoxNjkwMTA5NjUwfQ.TbNNnJ790maKnuHLAjGkUh-nVkJcPQhGy1GVD6Ssal
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3NSwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIyNzgyMzMsImlhdCI6MTY5MDExODIzM30.3jvLKFO6kF_GiO1FBcJBK5gbwAfmP-Z5nA3BVwv7zXY
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/6
