@@ -1,5 +1,6 @@
 const ProyectoModel = require('../models/proyecto.model');
 
+
 const getAllProyectos = async (req, res) => {
     try {
         const [proyectos] = await ProyectoModel.getProyectos();
@@ -41,9 +42,15 @@ const removeProyecto = async (req, res) => {
 }
 
 getForMonth = async (req, res) => {
+    const usuarioId = req.user.id
+
+    const datosProyectos = await ProyectoModel.getDatosForUserId(usuarioId)
+
+    console.log(datosProyectos[0])
+
+
     try {
-        const { usuarioId, proyectoId, mes } = req.params
-        const registro = await ProyectoModel.getMonth(usuarioId, proyectoId, mes)
+        const registro = await ProyectoModel.getMonth(usuarioId, 2,)
         res.json(registro[0])
 
     } catch (error) {

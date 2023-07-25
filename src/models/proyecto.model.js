@@ -2,7 +2,7 @@ const getProyectos = () => {
     return db.query('select * from proyectos')
 }
 
-const getByProyectoioId = (proyectoId) => {
+const getByProyectoId = (proyectoId) => {
     return db.query('select * from proyectos where id = ?', [proyectoId])
 }
 
@@ -30,9 +30,11 @@ const getMonth = (usuarioId, proyectoId, mes) => {
     )
 }
 
-
+const getDatosForUserId = (usuarioId, proyectoId) => {
+    return db.query('SELECT * FROM mydb.usuarios_has_proyectos where Usuarios_id=? and proyectos_id=?', [usuarioId, proyectoId])
+}
 
 
 module.exports = {
-    getProyectos, getByProyectoioId, insertProyecto, updateProyecto, deleteProyecto, getMonth
+    getProyectos, getByProyectoId, insertProyecto, updateProyecto, deleteProyecto, getMonth, getDatosForUserId
 }

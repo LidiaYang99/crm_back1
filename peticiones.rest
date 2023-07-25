@@ -160,6 +160,7 @@ DELETE {{host}}:{{port}}{{apiProyectos}}/5
 
 ###
 get {{host}}:{{port}}{{apiProyectos}}/5/1/07
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
 ###
 get {{host}}:{{port}}{{apiProyectos}}
 
