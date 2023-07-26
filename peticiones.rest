@@ -80,8 +80,8 @@ POST {{host}}:{{port}}{{apiUsuarios}}/login/user
 Content-Type: application/json
 
 {
-  "email": "claudiaaab@gmail.com",
-  "password": "123456"
+  "email": "vanessaduquerubio@gmail.com",
+  "password": "Vane1234"
 }
 
 
@@ -134,12 +134,12 @@ Content-Type: application/json
 
 
 ###
-PUT {{host}}:{{port}}{{apiUsuarios}}/editar/275
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJ1c2VyUm9sIjoiYWRtaW5zIiwiZXhwIjoxNjkyMjc1NTkyLCJpYXQiOjE2OTAxMTU1OTJ9.Swa_yJqdlFgZXTKj4H2YGQDgdZj-_O_kHscJY_JwGKA 
+PUT {{host}}:{{port}}{{apiUsuarios}}/editar/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
 Content-Type: application/json
 
 {
-  "id": 275,
+  "id": 4,
   "nombre": "caca",
   "apellidos": "perro",
   "dni": "95024261Z",
@@ -149,6 +149,17 @@ Content-Type: application/json
   "fecha_alta": "2023-07-19",
   "estado": 1,
   "departamento": "frontend"
+}
+
+###
+PUT {{host}}:{{port}}{{apiUsuarios}}/editar/user/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
+Content-Type: application/json
+
+{
+  "email": "cacaculo@hotmail.com",
+  "password": "$2a$08$nui6LdFHX89UVHqL6OsgGOUVWAj6zI1HD.tG5pb04JTAyHq7YIL/a",
+  "telefono": 665566655
 }
 
 ###
@@ -213,7 +224,7 @@ get {{host}}:{{port}}{{apiProyectos}}/obtener/proyecto/1
 
 ###
 get {{host}}:{{port}}{{apiProyectos}}/obtener/horasextra/7
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2NiwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTI1NTAxMzAsImlhdCI6MTY5MDM5MDEzMH0.TyS9ho6U5yWkFy8CUa3IUrwPwwyPKj2aRuef7lrufhQ
 
 
 

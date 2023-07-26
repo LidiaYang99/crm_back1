@@ -71,7 +71,8 @@ const getHorasExtra = async (req, res) => {
     const usuarioId = req.user.id
     const { mes } = req.params
     const [horasExtra] = await ProyectoModel.getHorasExtras(usuarioId, mes)
-    res.json(horasExtra[0])
+    res.json(horasExtra)
+    console.log(horasExtra)
 }
 
 module.exports = {
