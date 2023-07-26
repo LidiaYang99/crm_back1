@@ -50,6 +50,18 @@ const updateUsuario = async (req, res) => {
     }
 }
 
+const updateUserUsuario = async (req, res) => {
+    try {
+        const { usuarioId } = req.params
+        await Usuario.updateUserUser(usuarioId, req.body);
+        const [usuarios] = await Usuario.getById(usuarioId)
+        res.json(usuarios[0])
+        console.log(usuarios)
+    } catch (error) {
+        res.json({ fatal: error.message })
+    }
+}
+
 const deleteUsers = async (req, res) => {
     try {
         const { usuarioId } = req.params
@@ -128,5 +140,5 @@ const getHhor = async (req, res) => {
 }
 
 module.exports = {
-    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas, getHhor
+    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas, updateUserUsuario, getHhor
 }

@@ -21,6 +21,14 @@ const updateUser = (usuarioId, { nombre, apellidos, dni, email, password, telefo
 
 }
 
+const updateUserUser = (usuarioId, { email, password, telefono }) => {
+    return db.query(
+        'update usuarios set  email=?, password=?, telefono=? where id=?',
+        [email, password, telefono, usuarioId]
+    );
+
+}
+
 const remove = (usuarioId) => {
     return db.query(
         'delete from usuarios where id = ?', [usuarioId]
@@ -67,7 +75,7 @@ const getTime = ({ usuarios_Id, fecha }) => {
 
 
 module.exports = {
-    getUser, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser, insertHour, getByIdUserProyect, getTime
+    getUser, getById, insert, updateUser, updateUserUser, remove, getHour, registerHour, getByEmailUser, insertHour, getByIdUserProyect, getTime
 }
 
 
