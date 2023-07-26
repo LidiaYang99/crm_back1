@@ -119,14 +119,17 @@ const horasDedicadas = async (req, res) => {
     }
 };
 
-
-
 // test
 const getHhor = async (req, res) => {
     const [data] = await Usuario.getTime(req.body)
     res.json(data[0])
 }
 
+const getWeek = async (req, res) => {
+    const [time] = await Usuario.getTimeWeek(req.body)
+    res.json(time[0])
+}
+
 module.exports = {
-    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas, getHhor
+    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas, getHhor, getWeek
 }
