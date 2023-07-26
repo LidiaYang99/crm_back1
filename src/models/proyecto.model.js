@@ -1,8 +1,10 @@
+const { getHorasExtra } = require("../controllers/proyectos.controller")
+
 const getProyectos = () => {
     return db.query('select * from proyectos')
 }
 
-const getByProyectoioId = (proyectoId) => {
+const getByProyectoId = (proyectoId) => {
     return db.query('select * from proyectos where id = ?', [proyectoId])
 }
 
@@ -30,9 +32,13 @@ const getMonth = (usuarioId, proyectoId, mes) => {
     )
 }
 
-
-
+const getAllHourByProyect = (mes, usuarioId) => {
+    return db.query('SELECT proyectos_id, SUM(horas_dedicadas) AS total_horas_dedicadas FROM usuarios_has_proyectos where month(fecha)=? and usuarios_id=? GROUP BY proyectos_id;', [mes, usuarioId])
+}
+const getHorasExtras = (usuarioId, mes) => {
+    return db.query('SELECT SUM(CASE WHEN horas_dedicadas > 8 THEN horas_dedicadas - 8 END) AS horas_extra_total FROM usuarios_has_proyectos WHERE Usuarios_id = ? and month(fecha)=? ', [usuarioId, mes])
+}
 
 module.exports = {
-    getProyectos, getByProyectoioId, insertProyecto, updateProyecto, deleteProyecto, getMonth
+    getProyectos, getByProyectoId, insertProyecto, updateProyecto, deleteProyecto, getMonth, getAllHourByProyect, getHorasExtras
 }

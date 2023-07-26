@@ -64,6 +64,8 @@ const getTime = ({ usuarios_Id, fecha }) => {
 
 
 
+
+
 module.exports = {
     getUser, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser, insertHour, getByIdUserProyect, getTime
 }

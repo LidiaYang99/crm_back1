@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
-
 const Usuario = require("../models/usuario.model");
 const { createUserToken } = require('../helpers/utils')
+
 
 const getAll = async (req, res) => {
     try {
@@ -84,20 +84,24 @@ const registroHours = async (req, res) => {
 }
 
 const checkLoginUser = async (req, res) => {
+    try {
+        const [users] = await Usuario.getByEmailUser(req.body.email);
+        if (users.length === 0) {
+            return res.json({ fatal: 'error en email y/o contraseña' });
+        }
+        const user = users[0];
+        const iguales = bcrypt.compareSync(req.body.password, user.password);
+        if (!iguales) {
+            return res.json({ fatal: 'error en email y/o contraseña' });
+        }
+        res.json({
+            success: 'Login correcto',
+            token: createUserToken(user)
+        });
+    } catch (error) {
+        res.json({ fatal: 'error en el email o contraseña' })
+    }
 
-    const [users] = await Usuario.getByEmailUser(req.body.email);
-    if (users.length === 0) {
-        return res.json({ fatal: 'error en email y/o contraseña' });
-    }
-    const user = users[0];
-    const iguales = bcrypt.compareSync(req.body.password, user.password);
-    if (!iguales) {
-        return res.json({ fatal: 'error en email y/o contraseña' });
-    }
-    res.json({
-        success: 'Login correcto',
-        token: createUserToken(user)
-    });
 }
 
 const getProfile = async (req, res) => {

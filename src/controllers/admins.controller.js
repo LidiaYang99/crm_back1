@@ -70,7 +70,11 @@ const removeAdmin = async (req, res) => {
     }
 
 }
+const getProfile = async (req, res) => {
+    res.json(req.user)
+    console.log(req.user)
+}
 
 module.exports = {
-    getAllAdmin, actualizaAdmin, removeAdmin, checkLogin, create
+    getAllAdmin, actualizaAdmin, removeAdmin, checkLogin, create, getProfile
 }

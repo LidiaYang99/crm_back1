@@ -9,6 +9,13 @@ const getAllProyectos = async (req, res) => {
     }
 }
 
+const getById = async (req, res) => {
+    const { proyectoId } = req.params
+    console.log(proyectoId)
+    const [result] = await ProyectoModel.getByProyectoId(proyectoId)
+    res.json(result[0])
+}
+
 const postNewProyecto = async (req, res) => {
     try {
         const [result] = await ProyectoModel.insertProyecto(req.body);
@@ -23,7 +30,7 @@ const actualizaProyecto = async (req, res) => {
     try {
         const { proyectoId } = req.params
         await ProyectoModel.updateProyecto(proyectoId, req.body);
-        const [proyectos] = await ProyectoModel.getByProyectoioId(proyectoId)
+        const [proyectos] = await ProyectoModel.getByProyectoId(proyectoId)
         res.json(proyectos[0])
     } catch (error) {
         res.json({ fatal: error.message })
@@ -40,9 +47,11 @@ const removeProyecto = async (req, res) => {
     }
 }
 
-getForMonth = async (req, res) => {
+const getForMonth = async (req, res) => {
+    const usuarioId = req.user.id
     try {
-        const { usuarioId, proyectoId, mes } = req.params
+
+        const { proyectoId, mes } = req.params
         const registro = await ProyectoModel.getMonth(usuarioId, proyectoId, mes)
         res.json(registro[0])
 
@@ -52,6 +61,19 @@ getForMonth = async (req, res) => {
 
 }
 
+const getHourByProyect = async (req, res) => {
+    const usuarioId = req.user.id
+    const { mes } = req.params
+    const allHour = await ProyectoModel.getAllHourByProyect(mes, usuarioId)
+    res.json(allHour)
+}
+const getHorasExtra = async (req, res) => {
+    const usuarioId = req.user.id
+    const { mes } = req.params
+    const [horasExtra] = await ProyectoModel.getHorasExtras(usuarioId, mes)
+    res.json(horasExtra[0])
+}
+
 module.exports = {
-    getAllProyectos, postNewProyecto, actualizaProyecto, removeProyecto, getForMonth
+    getAllProyectos, postNewProyecto, actualizaProyecto, removeProyecto, getForMonth, getById, getHourByProyect, getHorasExtra
 }
