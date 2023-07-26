@@ -6,7 +6,14 @@
 @apiDepartamentos = /api/departamentos
 
 ###
+
 GET {{host}}:{{port}}{{apiAdmins}}
+
+
+###
+
+GET {{host}}:{{port}}{{apiAdmins}}/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
 
 ###
 PUT {{host}}:{{port}}{{apiAdmins}}/2
@@ -138,7 +145,11 @@ GET {{host}}:{{port}}{{apiProyectos}}
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
 
 ###
-PUT {{host}}:{{port}}{{apiProyectos}}/3
+GET {{host}}:{{port}}{{apiProyectos}}/horasporproyecto/7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
+
+###
+PUT {{host}}:{{port}}{{apiProyectos}}/editar/3
 Content-Type: application/json
 
 {
@@ -159,10 +170,17 @@ Content-Type: application/json
 DELETE {{host}}:{{port}}{{apiProyectos}}/5
 
 ###
-get {{host}}:{{port}}{{apiProyectos}}/5/1/07
+get {{host}}:{{port}}{{apiProyectos}}/1/07
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
 ###
 get {{host}}:{{port}}{{apiProyectos}}
+
+###
+get {{host}}:{{port}}{{apiProyectos}}/obtener/proyecto/1
+
+###
+get {{host}}:{{port}}{{apiProyectos}}/obtener/horasextra/7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImV4cCI6MTY5MDk2ODY3NywiaWF0IjoxNjg5NjcyNjc3fQ.gNxURPJ87nrPtOjHcjLFizw4nYjOOjsJEDN1bh6WghI
 
 
 
