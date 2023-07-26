@@ -57,9 +57,15 @@ const getByIdUserProyect = (usuarios_id) => {
     return db.query('select * from usuarios_has_proyectos where usuarios_id = ?', [usuarios_id])
 }
 
+const getTime = ({ usuarios_Id, fecha }) => {
+    return db.query('select SUM(horas_dedicadas) as sum from usuarios_has_proyectos where Usuarios_id = ? AND fecha = ?', [usuarios_Id, fecha])
+}
+
+
 
 
 module.exports = {
-    getUser, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser, insertHour, getByIdUserProyect
+    getUser, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser, insertHour, getByIdUserProyect, getTime
 }
+
 
