@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+const { createUserToken } = require("../helpers/utils")
 const Usuario = require("../models/usuario.model")
 
 const getAll = async (req, res) => {
@@ -24,6 +26,7 @@ const getUser = async (req, res) => {
 }
 
 const createUsers = async (req, res) => {
+    req.body.password = bcrypt.hashSync(req.body.password, 8);
     try {
         const [result] = await Usuario.insert(req.body)
         const [usuarios] = await Usuario.getById(result.insertId)
@@ -100,9 +103,14 @@ const getProfile = async (req, res) => {
 
 
 const horasDedicadas = async (req, res) => {
-    const [registro] = await Usuario.insertHour(usuarios_id, proyectos_id, hora_entrada, hora_salida, fecha)
-    res.json(registro)
-}
+    try {
+        const { proyectos_id, hora_entrada, hora_salida, fecha } = req.body;
+        const [registros] = await Usuario.insertHour(req.user.id, proyectos_id, hora_entrada, hora_salida, fecha);
+        res.json(registros);
+    } catch (error) {
+        res.json({ fatal: error.message });
+    }
+};
 
 module.exports = {
     getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas

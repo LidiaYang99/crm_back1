@@ -13,7 +13,7 @@ router.get('/:usuarioId/:fecha', checkTokenAdmin, usuariosController.getByDate);
 router.post('/', usuariosController.createUsers);
 router.post('/login/user', usuariosController.checkLoginUser);
 router.post('/horas', usuariosController.registroHours);
-router.post('/horasdedicadas', usuariosController.horasDedicadas)
+router.post('/profile/horasdedicadas', checkTokenUser, usuariosController.horasDedicadas)
 
 
 router.put('/editar/:usuarioId', usuariosController.updateUsuario);

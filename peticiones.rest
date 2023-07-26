@@ -66,7 +66,17 @@ Authorization:
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/2023-07-17
-Authorization: 'Hola carola'
+Authorization:
+
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/login/user
+Content-Type: application/json
+
+{
+  "email": "claudiaaab@gmail.com",
+  "password": "123456"
+}
+
 
 ###
 POST {{host}}:{{port}}{{apiUsuarios}}
@@ -75,13 +85,13 @@ Content-Type: application/json
 {
   "nombre": "claudia",
   "apellidos": "lopez",
-  "dni": "71206753n",
-  "email": "claudiaaaa@gmail.com",
+  "dni": "71206752N",
+  "email": "claudiaaab@gmail.com",
   "password":"123456",
-  "telefono": 666778886,
+  "telefono": 666778887,
   "estado":1,
   "fecha_alta": "2023-03-27",
-  "departamento_id":"2"
+  "departamento":"frontend"
   
 }
 
@@ -102,10 +112,18 @@ Content-Type: application/json
   
 }
   
-
 ###
-POST {{host}}:{{port}}{{apiUsuarios}}/horasdedicadas
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI1MywidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIzNjkyNDMsImlhdCI6MTY5MDIwOTI0M30.E_R8ToIGr-FQ1BoWjdm4RrDnMFIvfPYy-BIu15RUMGM
+POST {{host}}:{{port}}{{apiUsuarios}}/profile/horasdedicadas
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2NCwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTI0NDA0NDUsImlhdCI6MTY5MDI4MDQ0NX0.pkedwKlCgR-OEO2n1b8-0SHt7mRsRFuup600DPzhlgM
+Content-Type: application/json
+
+{
+  "proyectos_id": 1,
+  "hora_entrada": "08:00",
+  "hora_salida": "18:00",
+  "fecha": "2023-07-26"
+}
+
 
 
 ###
