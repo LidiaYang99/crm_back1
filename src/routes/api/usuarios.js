@@ -14,6 +14,7 @@ router.post('/', usuariosController.createUsers);
 router.post('/login/user', usuariosController.checkLoginUser);
 router.post('/horas', usuariosController.registroHours);
 router.post('/horasdedicadas', usuariosController.horasDedicadas)
+router.post('/getTime', usuariosController.getHhor)
 
 
 router.put('/editar/:usuarioId', usuariosController.updateUsuario);

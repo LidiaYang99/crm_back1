@@ -163,5 +163,21 @@ get {{host}}:{{port}}{{apiProyectos}}/5/1/07
 ###
 get {{host}}:{{port}}{{apiProyectos}}
 
+###
+post http://localhost:3000/send-email
+Content-Type: application/json
+
+{
+    "email": "lidiayang104@gmail.com"
+  }
+
+### 
+post http://localhost:3000/api/usuarios/getTime
+Content-Type: application/json
+
+{
+    "usuarios_Id": "262",
+    "fecha": "2023-07-26"
+  }
 
 

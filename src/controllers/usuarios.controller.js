@@ -1,4 +1,7 @@
-const Usuario = require("../models/usuario.model")
+const bcrypt = require('bcryptjs');
+
+const Usuario = require("../models/usuario.model");
+const { createUserToken } = require('../helpers/utils')
 
 const getAll = async (req, res) => {
     try {
@@ -24,6 +27,9 @@ const getUser = async (req, res) => {
 }
 
 const createUsers = async (req, res) => {
+
+    req.body.password = bcrypt.hashSync(req.body.password, 8);
+
     try {
         const [result] = await Usuario.insert(req.body)
         const [usuarios] = await Usuario.getById(result.insertId)
@@ -104,6 +110,14 @@ const horasDedicadas = async (req, res) => {
     res.json(registro)
 }
 
+
+
+// test
+const getHhor = async (req, res) => {
+    const [data] = await Usuario.getTime(req.body)
+    res.json(data[0])
+}
+
 module.exports = {
-    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas
+    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas, getHhor
 }
