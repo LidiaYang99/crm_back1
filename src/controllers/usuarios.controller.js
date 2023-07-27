@@ -145,5 +145,5 @@ const getWeek = async (req, res) => {
 }
 
 module.exports = {
-    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas, getHhor, getWeek
+    getAll, getUser, createUsers, deleteUsers, updateUsuario, getByDate, registroHours, checkLoginUser, getProfile, horasDedicadas, getHhor, getWeek, updateUserUsuario
 }
