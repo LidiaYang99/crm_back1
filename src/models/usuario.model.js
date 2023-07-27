@@ -74,7 +74,7 @@ const getTimeWeek = ({ usuarios_id, fecha_inicio, fecha_fin }) => {
 }
 
 module.exports = {
-    getUser, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser, insertHour, getByIdUserProyect, getTime, getTimeWeek
+    getUser, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser, insertHour, getByIdUserProyect, getTime, getTimeWeek, updateUserUser
 }
 
 
