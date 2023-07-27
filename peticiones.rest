@@ -80,8 +80,18 @@ POST {{host}}:{{port}}{{apiUsuarios}}/login/user
 Content-Type: application/json
 
 {
-  "email": "vanessaduquerubio@falso.com",
-  "password": "Vane1234"
+  "email": "danteroccu@hotmail.com",
+  "password": "loboLA22@"
+}
+###
+POST {{host}}:{{port}}{{apiUsuarios}}/getweek
+Content-Type: application/json
+
+{
+  "usuarios_id": 267,
+  "fecha_inicio": "2023-07-17",
+  "fecha_fin": "2023-07-26"
+
 }
 
 
@@ -217,9 +227,11 @@ post http://localhost:3000/api/usuarios/getTime
 Content-Type: application/json
 
 {
-    "usuarios_Id": "262",
-    "fecha": "2023-07-26"
+    "usuarios_Id": "6",
+    "fecha": "2023-07-17"
   }
+
+###
 get {{host}}:{{port}}{{apiProyectos}}/obtener/proyecto/1
 
 ###
