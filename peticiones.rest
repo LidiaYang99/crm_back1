@@ -80,7 +80,7 @@ POST {{host}}:{{port}}{{apiUsuarios}}/login/user
 Content-Type: application/json
 
 {
-  "email": "vanessaduquerubio@gmail.com",
+  "email": "vanessaduquerubio@falso.com",
   "password": "Vane1234"
 }
 
@@ -224,7 +224,8 @@ get {{host}}:{{port}}{{apiProyectos}}/obtener/proyecto/1
 
 ###
 get {{host}}:{{port}}{{apiProyectos}}/obtener/horasextra/7
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2NiwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTI1NTAxMzAsImlhdCI6MTY5MDM5MDEzMH0.TyS9ho6U5yWkFy8CUa3IUrwPwwyPKj2aRuef7lrufhQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI4MywidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTI2MTA0NDYsImlhdCI6MTY5MDQ1MDQ0Nn0.tgqjzCKB63X7j17gMNpjYIMoLmoioe1ayWHRc42oHXA
+
 
 
 

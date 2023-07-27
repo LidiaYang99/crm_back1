@@ -39,6 +39,10 @@ const getHorasExtras = (usuarioId, mes) => {
     return db.query('SELECT  p.nombre AS nombre_proyecto, SUM(CASE WHEN horas_dedicadas > 8 THEN horas_dedicadas - 8 END) AS horas_extra_total  FROM usuarios_has_proyectos up JOIN proyectos p ON up.proyectos_id = p.id WHERE Usuarios_id = ? and month(fecha)=? GROUP BY p.nombre', [usuarioId, mes,])
 }
 
-module.exports = {
-    getProyectos, getByProyectoId, insertProyecto, updateProyecto, deleteProyecto, getMonth, getAllHourByProyect, getHorasExtras
+/* const getAllHour = (mes, usuarioId) => {
+    return db.query('SELECT SUM(horas_dedicadas) AS total_horas_dedicadas FROM usuarios_has_proyectos where month(fecha)=? and usuarios_id=?', [mes, usuarioId])
 }
+ */
+module.exports = {
+    getProyectos, getByProyectoId, insertProyecto, updateProyecto, deleteProyecto, getMonth, getAllHourByProyect, getHorasExtras,/*  getAllHour
+*/} 

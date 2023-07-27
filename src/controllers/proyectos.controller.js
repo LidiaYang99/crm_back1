@@ -75,6 +75,14 @@ const getHorasExtra = async (req, res) => {
     console.log(horasExtra)
 }
 
+const getAllHoras = async (req, res) => {
+    const usuarioId = req.user.id
+    const { mes } = req.params
+    const [allHour] = await ProyectoModel.getAllHour(mes, usuarioId)
+    console.log(allHour)
+    res.json(allHour)
+}
+
 module.exports = {
-    getAllProyectos, postNewProyecto, actualizaProyecto, removeProyecto, getForMonth, getById, getHourByProyect, getHorasExtra
+    getAllProyectos, postNewProyecto, actualizaProyecto, removeProyecto, getForMonth, getById, getHourByProyect, getHorasExtra, getAllHoras
 }
