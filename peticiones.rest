@@ -80,15 +80,15 @@ POST {{host}}:{{port}}{{apiUsuarios}}/login/user
 Content-Type: application/json
 
 {
-  "email": "claudiaaab@gmail.com",
-  "password": "123456"
+  "email": "danteroccu@hotmail.com",
+  "password": "loboLA22@"
 }
 ###
 POST {{host}}:{{port}}{{apiUsuarios}}/getweek
 Content-Type: application/json
 
 {
-  "usuarios_id": "6",
+  "usuarios_id": 267,
   "fecha_inicio": "2023-07-17",
   "fecha_fin": "2023-07-26"
 

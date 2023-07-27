@@ -62,9 +62,8 @@ const getTime = ({ usuarios_Id, fecha }) => {
 }
 
 const getTimeWeek = ({ usuarios_id, fecha_inicio, fecha_fin }) => {
-    return db.query('SELECT SUM(horas_dedicadas) as total_horas_semana FROM usuarios_has_proyectos WHERE usuarios_id = ? AND fecha BETWEEN ? AND ?', [usuarios_id, fecha_inicio, fecha_fin])
+    return db.query('SELECT ROUND(SUM(horas_dedicadas))as total_horas_semana FROM usuarios_has_proyectos WHERE usuarios_id = ? AND fecha BETWEEN ? AND ?', [usuarios_id, fecha_inicio, fecha_fin])
 }
-
 
 module.exports = {
     getUser, getById, insert, updateUser, remove, getHour, registerHour, getByEmailUser, insertHour, getByIdUserProyect, getTime, getTimeWeek

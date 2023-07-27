@@ -126,7 +126,9 @@ const getHhor = async (req, res) => {
 }
 
 const getWeek = async (req, res) => {
+
     const [time] = await Usuario.getTimeWeek(req.body)
+    console.log(req.body)
     res.json(time[0])
 }
 
