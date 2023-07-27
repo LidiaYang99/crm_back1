@@ -209,6 +209,8 @@ Content-Type: application/json
     "usuarios_Id": "262",
     "fecha": "2023-07-26"
   }
+
+  ###
 get {{host}}:{{port}}{{apiProyectos}}/obtener/proyecto/1
 
 ###

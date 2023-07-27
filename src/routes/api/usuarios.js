@@ -17,7 +17,6 @@ router.post('/horasdedicadas', usuariosController.horasDedicadas)
 router.post('/getTime', usuariosController.getHhor)
 router.post('/profile/horasdedicadas', checkTokenUser, usuariosController.horasDedicadas)
 router.put('/editar/:usuarioId', usuariosController.updateUsuario);
-router.put('/editar/user/:usuarioId', usuariosController.updateUserUsuario);
 router.delete('/:usuarioId', usuariosController.deleteUsers);
 
 module.exports = router;
