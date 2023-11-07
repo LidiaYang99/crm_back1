@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
 const usuariosController = require('../../controllers/usuarios.controller')
-const { checkTokenAdmin, checkTokenUser } = require('../../helpers/middlewares');
+const { checkTokenAdmin, checkTokenUser, checkUsuarioId } = require('../../helpers/middlewares');
 
 
 router.get('/', usuariosController.getAll);
 router.get('/profile', checkTokenUser, usuariosController.getProfile)
-router.get('/:usuarioId', /* checkUsuarioId, */ usuariosController.getUser);
+router.get('/:usuarioId',/*  checkUsuarioId, */ usuariosController.getUser);
 router.get('/:usuarioId/:fecha', checkTokenAdmin, usuariosController.getByDate);
 
 

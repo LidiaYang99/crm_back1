@@ -13,7 +13,7 @@ GET {{host}}:{{port}}{{apiAdmins}}
 ###
 
 GET {{host}}:{{port}}{{apiAdmins}}/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUm9sIjoiYWRtaW5zIiwiZXhwIjoxNzAwNTY3NzQ5LCJpYXQiOjE2OTg0MDQxNDl9.kZTz5UANu46f53N2B6MZ5i6yeKnKVS_oX5458R-3ncE
 
 ###
 PUT {{host}}:{{port}}{{apiAdmins}}/2
@@ -39,18 +39,17 @@ Content-Type: application/json
 
 ###
 POST {{host}}:{{port}}{{apiAdmins}}/login
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyUm9sIjoiYWRtaW5zIiwiZXhwIjoxNzAwNTY3NzQ5LCJpYXQiOjE2OTg0MDQxNDl9.kZTz5UANu46f53N2B6MZ5i6yeKnKVS_oX5458R-3ncE
 Content-Type: application/json
 
 {
-    "nombre": "Maria",
+      "nombre": "test132",
     "apellidos": "Jose",
-    "email": "mariajose@hotmail.com",
-    "password":"123456"
+    "email": "test132@hotmail.com",
+    "password":"123456798"
 }
 
-###
-GET http://localhost:3000/api/usuarios/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
+
 
 ###
 DELETE {{host}}:{{port}}{{apiAdmins}}/2
@@ -59,13 +58,14 @@ DELETE {{host}}:{{port}}{{apiAdmins}}/2
 ##   API USUARIOS     ##
 #########################
 
-
-
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}
-Authorization: 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJleHAiOjE2OTA5Njk0NDEsImlhdCI6MTY4OTY3MzQ0MX0.6qDC-8xNIQJZxQwbGpt8r7SAePzXy4Dhi3q4J54oYqM
+
+###
+
 GET {{host}}:{{port}}{{apiUsuarios}}/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3NSwidXNlclJvbCI6InVzZXIiLCJleHAiOjE2OTIyNzgyMzMsImlhdCI6MTY5MDExODIzM30.3jvLKFO6kF_GiO1FBcJBK5gbwAfmP-Z5nA3BVwv7zXY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2NiwidXNlclJvbCI6InVzZXIiLCJleHAiOjE3MDA1NjU2MDcsImlhdCI6MTY5ODQwMjAwN30.PUIeDDEHF3FVyzZ-DGtRVDJ5_OrLUbNBf2uRU7obIJ0
 
 ###
 GET {{host}}:{{port}}{{apiUsuarios}}/6
@@ -77,6 +77,7 @@ Authorization:
 
 ###
 POST {{host}}:{{port}}{{apiUsuarios}}/login/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2NiwidXNlclJvbCI6InVzZXIiLCJleHAiOjE3MDA1NjU2MDcsImlhdCI6MTY5ODQwMjAwN30.PUIeDDEHF3FVyzZ-DGtRVDJ5_OrLUbNBf2uRU7obIJ0
 Content-Type: application/json
 
 {

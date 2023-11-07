@@ -7,7 +7,7 @@ const AdminModel = require('../models/admin.model');
 const checkUsuarioId = async (req, res, next) => {
     const { usuarioId } = req.params;
 
-    const [usuarios] = await Usuario.getUsers(usuarioId);
+    const [usuarios] = await Usuario.getUser(usuarioId);
 
     if (usuarios.length === 0) {
         return res.send({ fatal: 'El usuario no existe' });
